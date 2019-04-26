@@ -92,11 +92,9 @@ Here are some of the more tedious steps, and why they're important:
 
 Don't skimp on any of these steps just because they take a while; don't figure that you'll get back to them later. The goal is to ensure that you protect your digital investments from problems _before_ you make any real investments.
 
-### Adversaries
+### Threats
 
-This process in this basic scenario has been optimized to avoid risks from ten adversaries listed below — simplified by not addressing the risks of all possible adversaries (over 25+). In particular, these adversaries were the ones selected as most likely to impact a self-custodian in the first world. Adversaries related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario.
-
-Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#process-fatigue).
+This process in this basic scenario has been optimized to avoid risks from ten threats listed below — simplified by not addressing all possible threats, of which we have identified over 25. In particular, these threats were the ones selected as most likely to impact a self-custodian in the first world. Threats related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario. Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#process-fatigue). Careless error can be very costly.
 
 1. [Key Fragility](#key-fragility) — _an accidental key loss_
 2. [Transaction Error](#transaction-error) — _incorrect transaction details leading to loss_
@@ -109,7 +107,7 @@ Some additional processes for this scenario are offered as options—but be care
 9. [Process Fatigue](#process-fatigue) — _errors caused by the complexity of the overall procedure_
 10. [Physical Theft, Casual](#physical-theft-casual) — _an opportunistic physical theft_
 
-The most notable of these adversaries may be "Systemic Network Attack", an adversary that is very problematic in hot-wallet scenarios, but largely nullified by removing private keys into cold storage. In many ways, it's the prime adversary overcome by this scenario.
+The most notable of these adversaries may be "Systemic Network Attack," a threat that is very problematic in hot-wallet scenarios, but largely nullified by removing private keys to cold storage. In many ways, it's the primary adversary overcome by this scenario.
 
 See [Appendix III: A Brief Overview of Digital-Asset Adversaries](#appendix-iii-a-brief-overview-of-digital-asset-adversaries) for a brief overview of the adversaries covered in this document, and [Adversaries — Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_ for a more extensive list and discussion.
 
