@@ -8,7 +8,7 @@
 
 ### Disclaimer
 
-_The information below is intended to inform a set of best practices. It may not address risks specific to your situation, and if it does not, you should modify appropriately. While this information may inform best practices, there is no guarantee that following this advice will sufficiently ensure the security of your digital assets. In addition, this information is only a window on best practices at a specific moment in time. Be aware that the Bitcoin & blockchain ecosystems may have evolved and the risk assessments of specific products may have changed since the publication of this draft. In other words: be cautious, be careful, and be aware of the current Bitcoin & blockchain landscape before you use this information._
+_The information below is intended to inform a set of best practices. It may not address risks specific to your situation, and if it does not, you should modify your practices appropriately. While this information may inform best practices, there is no guarantee that following this advice will ensure the security of your digital assets. This information is only a window on best practices at a specific moment in time. Be aware that the Bitcoin & blockchain ecosystems may have evolved and the risk assessments of specific products may have changed since the publication of this draft. In other words: be cautious, be careful, and be aware of the current Bitcoin & blockchain landscape before you use this information._
 
 ### Copyright & Contributing
 
@@ -32,17 +32,17 @@ Any questions or issues concerning this white paper or contributions of updates 
 
 ### What is #SmartCustody?
 
-> _**"The use of advanced cryptographic tools to improve the care, maintenance, control, and protection of digital assets."**_
+> _**"The use of risk management to improve the care, maintenance, control, and protection of digital assets."**_
 >
 
 Our goals:
 
-* To raise the bar on best practices for digital-asset custodianship by building a greater understanding of different custody use cases, risk models, and adversary threats.
+* To improve digital-asset custodianship by building a greater understanding of different custody scenarios, risk models, and threats.
 * To prepare for new custody technologies that break old models for custodianship.
 
-To accomplish these goals, we are creating a series of best-practices white papers and also offering a series of different workshops on these topics. We are additionally collaborating with cryptographic industry and regulatory stakeholders to establish standards, improve best practices, and create new cryptographic key-management and custody technologies.
+To accomplish these goals, we are creating a series of best-practices white papers and also offering a series of workshops on these topics. We are also collaborating with cryptographic industry and regulatory stakeholders to establish standards, improve best practices, and create new cryptographic key-management and custody technologies.
 
-This is the first of our [#SmartCustody](https://www.SmartCustody.com) best-practices white papers. To be informed of the release of future best-practices and other educational white papers and to learn about future workshops, subscribe to our email newsletter at https://tinyletter.com/SmartCustody.
+This is the first of our [#SmartCustody](https://www.SmartCustody.com) best-practices white papers. To be informed of the release of future white papers and to learn about future workshops, subscribe to our email newsletter at https://tinyletter.com/SmartCustody.
 
 ### The #SmartCustody Team
 
@@ -54,43 +54,43 @@ The procedures and contents of this white paper have been comprehensively peer-r
 
 ## INTRODUCTION
 
-Digital assets are only as safe as the procedures of their custodian. Many digital-asset holders don't practice minimal safety, and this could result in the loss of all of their Bitcoins, Ether, other digital currencies as well as non-fungible digital assets. The following procedures detail simple and practical setups that can be used as the foundation of safer digital-asset management. The base scenario requires just a few hours setup and then a semi-annual check to make sure everything remains secure.
+Digital assets are only as safe as the procedures of their custodian. Many digital-asset holders practice minimal safety, and this could result in the loss of all of their Bitcoins, Ether, and other digital currencies as well as non-fungible digital assets. The following procedures detail simple and practical setups that can be used as the foundation of safer digital-asset management. The base scenario requires just a few hours setup, followed by a semi-annual check to make sure everything remains secure.
 
 ### About The Base Scenario
 
-The base scenario presumes the following audience:
+The base scenario presumes the following:
 
 * A holder with a significant amount of digital assets (>5% of net worth);
     * with full and legal custody of the assets and no fiduciary responsibility to others;
     * and 100% of those assets shared with a spouse, if present, in estate planning.
-* A holder who largely holds investments long term, and is not actively trading them.
+* A holder who largely holds investments long-term, and is not actively trading them.
 * A holder who lives in the first world, and thus is less concerned about issues like government attack, kidnapping, or privacy violations.
 * A holder who has sufficient computer skills to comfortably install and run apps.
 
-This scenario suggests that a comprehensive cold-storage procedure would be the best practice to maintain and protect this holder's digital assets. Though simple, this scenario is also a foundation for more complex custodial procedures. It introduces many of the basic approaches for managing digital assets, explains their importance, and presents the adversaries that could steal or ruin the holder's digital assets.
+This scenario suggests that a comprehensive cold-storage procedure would be the best practice to maintain and protect this holder's digital assets. Cold storage is the maintenance of digital assets in a protected, offline environment. Though simple, this scenario is also a foundation for more complex custodial procedures. It introduces many of the basic approaches for managing digital assets, explains their importance, and presents the threats that could steal or ruin the holder's digital assets.
 
-This scenario advocates the basic procedure to address nine major types of adversaries, while the optional procedures can help protect against five further adversaries. Additional categories of "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" adversaries are not strongly considered in this scenario. See [Appendix III: A Brief Overview of Digital-Asset Adversaries](#appendix-iii-a-brief-overview-of-digital-asset-adversaries).
+This scenario advocates the basic procedure to address nine major types of threats, while the optional procedures can help protect against five further threats. Additional categories of threat---"Non-Theft Crimes", "Loss by Government" and "Privacy-Related"---are not strongly considered in this scenario. See [Appendix III: A Brief Overview of Digital-Asset Adversaries](#appendix-iii-a-brief-overview-of-digital-asset-adversaries).
 
 For simplicity, this document focuses on Bitcoin, but is easily adaptable to other digital assets supported by our suggested hardware wallet.
 
-If you don't meet the description of the holder for this scenario, it will still be useful, but you will have to adapt it for you specific needs. If you are unsure as to whether you should use a cold-storage scenario, please see [Appendix I: Why Cold Storage?](#appendix-i-why-cold-storage).
+If you don't meet the description of the holder for this scenario, it will still be useful, but you will have to adapt it for your specific needs. If you are unsure as to whether you should use a cold-storage scenario, please see [Appendix I: Why Cold Storage?](#appendix-i-why-cold-storage).
 
 ## PROCEDURES
 
-The following procedure will help ensure the safety of a simple self-custody cold-storage scenario for managing digital assets. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
+The following procedures implement a simple self-custody, cold-storage scenario for managing digital assets. The objective is to prevent the private keys that control digital assets from falling into the wrong hands, making sure at the same time that they are available to digital-asset owners and, when appropriate, their heirs. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted or distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
 
 ### Be Careful!
 
-**_General rule: Don't rush and don't take cold storage lightly!_**
+**_General rule: Don't rush, and don't take cold storage lightly!_**
 
 If you make a mistake you could lose your bitcoin today, or you could expose secret data that would allow an attacker to steal your funds months or years into the future.
 
 Here are some of the more tedious steps, and why they're important:
 
-* **_Verify Your Recovery Phrase (D)._** Double-checking your recovery phrase ensures that you can rebuild access to your digital currency if you ever lose your hardware wallet(s). By doing it after a small test transaction, you're minimizing your potential loss. **_15 minutes, but tedious._**
-* **_Setup Fireproof Key Recovery Phrase (F)._** Embedding your recovery phrase in steel or titanium strongly protects you against [Disaster](#disaster), and also gives you a backup for your hardware wallet and paper recovery phrase. However, it takes a long time to stamp 96 letters. **_1 hour._** Be sure to also repeat step D for the phrase you saved in your metal-device. **_15 minutes, and still tedious._** If you choose the "Cryptosteel" alternative, that will be equally long.
+* **_Verify Your Recovery Phrase (Step D)._** Double-checking the phrase that allows you to recover private keys ensures that you can rebuild access to your digital currency if you ever lose your hardware wallet(s). By doing it after a small test transaction, you're minimizing your potential loss. **_15 minutes, but tedious._**
+* **_Setup Fireproof Key Recovery Phrase (Step F)._** Embedding your recovery phrase in steel or titanium strongly protects you against [Disaster](#disaster), and also gives you a backup for your hardware wallet and paper recovery phrase. However, it takes a long time to stamp 96 letters. **_1 hour._** Be sure to also repeat step D for the phrase you saved in your metal-device. **_15 minutes, and still tedious._** If you choose the "Cryptosteel" alternative, that will be equally long.
 
-Don't skimp on any of these phases just because they take a while; don't figure that you'll get back to them later. The goal is to ensure that you protect your digital investments from problems _before_ you make any real investments.
+Don't skimp on any of these steps just because they take a while; don't figure that you'll get back to them later. The goal is to ensure that you protect your digital investments from problems _before_ you make any real investments.
 
 ### Adversaries
 
