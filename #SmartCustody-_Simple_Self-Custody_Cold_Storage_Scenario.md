@@ -48,7 +48,7 @@ This is the first of our [#SmartCustody](https://www.SmartCustody.com) best-prac
 
 [#SmartCustody](https://www.SmartCustody.com) is a project of [Blockchain Commons](https://www.BlockchainCommons.com), which supports blockchain infrastructure, internet security, and cryptographic research.
 
-The leads for these [#SmartCustody](https://www.SmartCustody.com) efforts are Christopher Allen ([@ChristopherA](https://twitter.com/ChristopherA)), Shannon Appelcline ([@Appelcline](https://twitter.com/Appelcline)), and Bryan Bishop ([@Kanzure](https://twitter.com/kanzure)). For more information see [Author Bios](#author-bios) at end of this white paper.
+The leads for these [#SmartCustody](https://www.SmartCustody.com) efforts are Christopher Allen ([@ChristopherA](https://twitter.com/ChristopherA)), Shannon Appelcline ([@Appelcline](https://twitter.com/Appelcline)), and Bryan Bishop ([@Kanzure](https://twitter.com/kanzure)). For more information see [Author Bios](#author-bios) at end of this white paper. Those named do not endorse this version, which is a heavy edit by Jim Harper ([@jim_harper](https://twitter.com/jim_harper)) meant to conform the work to common terminology and make the material more accessible to lay readers.
 
 The procedures and contents of this white paper have been comprehensively peer-reviewed by a number of experts in the digital-asset ecosystem, including contributors to open-source project like Bitcoin Core and [The Glacier Project](https://glacierprotocol.org/), employees of blockchain technology companies like Blockstream, Ledger, and Tokensoft, and attorneys from a variety of disciplines. We expect to iterate these procedures and update this document regularly as new digital asset technologies and best practices become mature.
 
@@ -58,21 +58,19 @@ Digital assets are only as safe as the procedures of their custodian. Many digit
 
 ### Risk Management
 
-Risk management is a framework for securing assets or processes. It involves a series of methodical assessments. A formal risk management effort will generally begin with an examination of the thing or process being protected. This is often called “asset characterization.” In this case, the goal is fairly simple: ensuring that digital assets are not lost or stolen by ensuring that private keys are always available to custodians, sometimes available to heirs, and never available to unauthorized parties.
+Risk management is a framework for securing assets or processes. It involves a series of methodical assessments. A formal risk management effort will generally begin with an examination of the thing or process being protected. This is often called “asset characterization.” In this case, the goal is fairly simple: ensuring that private keys and thus digital assets are always available to custodians, sometimes available to heirs, and never available to unauthorized parties.
 
 The next step in risk management is to identify and assess risks, often called “risk characterization” or “risk assessment.” The vocabulary of risk assessment is not settled, but there are a few key concepts that go into it:
 
 * **Vulnerability** is weakness or exposure that could prevent an objective from being reached. Vulnerabilities are common, and having a vulnerability does not damn an enterprise. The importance of vulnerabilities depend on other factors.
 
-* **Threat** is some kind of actor or entity that might prevent an objective from being reached. When the threat is a conscious actor, it is often called an "adversary" or "attacker"; it is often useful to assess such actors' motives. When the threat is some environmental or physical force, it is often called a “hazard.” As with vulnerability, the existence of a threat is not significant in and of itself. A threat’s importance and contribution to risk turns on a number of factors.
+* **Threat** is some kind of actor or entity that might prevent an objective from being reached. When the threat is a conscious actor, it is often called an "adversary" or "attacker," and it is often useful to assess such actors' motives. When the threat is some environmental or physical force, it is often called a “hazard.” As with vulnerability, the existence of a threat is not significant in and of itself. A threat’s importance and contribution to risk turns on other factors.
 
 * **Likelihood** is the chance that a vulnerability left open to a threat will materialize as an unwanted event or development that frustrates the objective of controlling digital assets. Knowing the likelihood that a threat will materialize is part of what allows risk managers to apportion their responses.
 
 * **Consequence** is the significance of loss or impediment to objectives should the threat materialize. Consequences can range from very low to very high. As with likelihood, gauging consequence allows risk managers to focus on the most significant risks.
 
-Analyzing vulnerabilities and threats permits risk managers to make rough calculations about likelihood and consequence. This process will float the most significant risks to the surface. Though these factors are often difficult to measure, a simple formula guides risk assessment:
-
-**Likelihood x Consequence = Risk**
+Analyzing vulnerabilities and threats permits risk managers to make rough calculations about likelihood and consequence. This process will float the most significant risks to the surface. Though these factors are often difficult to measure, a simple formula guides risk assessment: _Likelihood x Consequence = Risk_.
 
 Events with a high likelihood and consequence should be addressed first, and with the most investment of time and energy. Those are the highest risks.
 
@@ -90,7 +88,7 @@ Though the concepts and terminology are not settled in this area either, there a
 
 The analytical lens to use when choosing responses is benefit-cost analysis, or trade-offs. The goal is to allay risks in cost-effective ways, spending the least amount of money, and incurring the least costs overall, per unit of benefit.
 
-An important cost of some responses is “risk transfer.” That’s the shifting of risks from one target to another, the creation of new risks, or increasing the likelihood or consequence of a different risk than the one being addressed.
+An important cost of some responses is “risk transfer.” That’s the shifting of risks from one target to another, the creation of new risks, or increasing the likelihood or consequence of a different risk than the one being addressed. [Process Fatigue] is an example featured in this document, where lacking attention to many very finely detailed procedures may introduce careless errors. 
 
 ### Threats to Digital Assets
 
@@ -98,7 +96,7 @@ When protecting digital assets, a custodian should address the risks that arise 
 
 Below is a brief summary of the fifteen threats (from a list of twenty-seven), a subset of which this particular scenario addresses. Additional categories of "Non-Theft Crimes"; "Loss by Government"; and "Privacy-Related" threats are not directly considered in the procedures that follow.
 
-For a complete list of digital-asset threats, along with motivations, abstract & historical case studies, risks, and potential process solutions for each, see [Adversaries — Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_.
+For a complete list of digital-asset threats, along with motivations, abstract & historical case studies, risks, and potential process solutions for each, see [Threats — Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_.
 
 ##### Death / Incapacitation
 
@@ -126,7 +124,7 @@ _A theft by a trusted person such as an heir or executor._ “You trusted me wit
 
 ##### Network Attack, Personal
 
-A personal online attack._ “I want to control your movements, to keep you from getting to your bank or to your house. As is often the case, I have a deeper motivation, but it probably has nothing to do with your cryptocurrency. Instead, my motives likely relate to an instability in your city, state, or country. I might be a riot, a political insurgency, or a popular uprising.”
+_A personal online attack._ “I want to control your movements, to keep you from getting to your bank or to your house. As is often the case, I have a deeper motivation, but it probably has nothing to do with your cryptocurrency. Instead, my motives likely relate to an instability in your city, state, or country. I might be a riot, a political insurgency, or a popular uprising.”
 
 ##### Network Attack, Systemic
 
@@ -134,11 +132,11 @@ _A server online attack._ “I’m a big kahuna among hackers. I don’t go afte
 
 ##### Physical Theft, Casual
 
-_An opportunistic physical theft_ “I just want an easy score, and your house looks like it. Obviously, I’m taking your jewelry and your electronics. But, if you got a safe, I’ll try to take that too. I have no idea what I’ll do with it, or with the contents if I can get it open. If I see some weird numbers, I’ll probably just trash them.”
+_An opportunistic physical theft._ “I just want an easy score, and your house looks like it. Obviously, I’m taking your jewelry and your electronics. But, if you've got a safe, I’ll try to take that too.”
 
 ##### Physical Theft, Sophisticated
 
-_A purposeful physical theft of private keys._ “I know you have cryptocurrency and I want to steal your keys. I’m not a fancy hacker or email spoofer. Instead, I’m someone who can successfully stage a real-world crime. I’ll break into your house or your safety deposit box. Cut the music for my heist scene.”
+_A purposeful physical theft of private keys._ “I know you have cryptocurrency and I want to steal your keys. I’m not a fancy hacker or email spoofer. Instead, I’m someone who can successfully stage a real-world crime. I’ll break into your house or your safety deposit box. Cue the music for my heist scene.”
 
 #### Supply-Chain Attack
 
@@ -181,7 +179,7 @@ If you don't meet the description of the holder for this scenario, it will still
 
 ## PROCEDURES
 
-The following procedures implement a simple self-custody, cold-storage scenario for managing digital assets. The objective is to prevent the private keys that control digital assets from falling into the wrong hands, making sure at the same time that they are available to digital-asset owners and, when appropriate, their heirs. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted or distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
+The following procedures implement a simple self-custody, cold-storage scenario for managing digital assets. The objective is to prevent the private keys that control digital assets from falling into the wrong hands, making sure at the same time that they are available to digital-asset owners and, when appropriate, their heirs. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted or distracted. You don't want to make mistakes, and to avoid mistakes it's best to do everything in one go.
 
 ### Be Careful!
 
@@ -198,7 +196,7 @@ Don't skimp on any of these steps just because they take a while; don't figure t
 
 ### Threats
 
-This process in this basic scenario has been optimized to avoid risks from ten threats listed below — simplified by not addressing all possible threats, of which we have identified over 25. In particular, these threats were the ones selected as most likely to impact a self-custodian in the first world. Threats related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario. Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#process-fatigue). Careless error can be very costly.
+The procedures in this basic scenario has been optimized to avoid risks from ten threats listed below — simplified by not addressing all possible threats, of which we have identified over 25. In particular, these threats were the ones selected as most likely to impact a self-custodian in the first world. Threats related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario. Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#process-fatigue). Careless error can be very costly.
 
 1. [Key Fragility](#key-fragility) — _an accidental key loss_
 2. [Transaction Error](#transaction-error) — _incorrect transaction details leading to loss_
