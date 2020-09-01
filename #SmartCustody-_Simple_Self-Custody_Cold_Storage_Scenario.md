@@ -8,7 +8,7 @@
 
 ### Disclaimer
 
-_The information below is intended to inform a set of best practices. It may not address risks specific to your situation, and if it does not, you should modify appropriately. While this information may inform best practices, there is no guarantee that following this advice will sufficiently ensure the security of your digital assets. In addition, this information is only a window on best practices at a specific moment in time. Be aware that the Bitcoin & blockchain ecosystems may have evolved and the risk assessments of specific products may have changed since the publication of this draft. In other words: be cautious, be careful, and be aware of the current Bitcoin & blockchain landscape before you use this information._
+_The information below is intended to inform a set of best practices. It may not address risks specific to your situation, and if it does not, you should modify your practices appropriately. While this information may inform best practices, there is no guarantee that following this advice will ensure the security of your digital assets. This information is only a window on best practices at a specific moment in time. Be aware that the Bitcoin & blockchain ecosystems may have evolved and the risk assessments of specific products may have changed since the publication of this draft. In other words: be cautious, be careful, and be aware of the current Bitcoin & blockchain landscape before you use this information._
 
 ### Copyright & Contributing
 
@@ -32,76 +32,176 @@ Any questions or issues concerning this white paper or contributions of updates 
 
 ### What is #SmartCustody?
 
-> _**"The use of advanced cryptographic tools to improve the care, maintenance, control, and protection of digital assets."**_
+> _**"The use of risk management to improve the care, maintenance, control, and protection of digital assets."**_
 >
 
 Our goals:
 
-* To raise the bar on best practices for digital-asset custodianship by building a greater understanding of different custody use cases, risk models, and adversary threats.
+* To improve digital-asset custodianship by building a greater understanding of different custody scenarios, risk models, and threats.
 * To prepare for new custody technologies that break old models for custodianship.
 
-To accomplish these goals, we are creating a series of best-practices white papers and also offering a series of different workshops on these topics. We are additionally collaborating with cryptographic industry and regulatory stakeholders to establish standards, improve best practices, and create new cryptographic key-management and custody technologies.
+To accomplish these goals, we are creating a series of best-practices white papers and also offering a series of workshops on these topics. We are also collaborating with cryptographic industry and regulatory stakeholders to establish standards, improve best practices, and create new cryptographic key-management and custody technologies.
 
-This is the first of our [#SmartCustody](https://www.SmartCustody.com) best-practices white papers. To be informed of the release of future best-practices and other educational white papers and to learn about future workshops, subscribe to our email newsletter at https://tinyletter.com/SmartCustody.
+This is the first of our [#SmartCustody](https://www.SmartCustody.com) best-practices white papers. To be informed of the release of future white papers and to learn about future workshops, subscribe to our email newsletter at https://tinyletter.com/SmartCustody.
 
 ### The #SmartCustody Team
 
 [#SmartCustody](https://www.SmartCustody.com) is a project of [Blockchain Commons](https://www.BlockchainCommons.com), which supports blockchain infrastructure, internet security, and cryptographic research.
 
-The leads for these [#SmartCustody](https://www.SmartCustody.com) efforts are Christopher Allen ([@ChristopherA](https://twitter.com/ChristopherA)), Shannon Appelcline ([@Appelcline](https://twitter.com/Appelcline)), and Bryan Bishop ([@Kanzure](https://twitter.com/kanzure)). For more information see [Author Bios](#author-bios) at end of this white paper.
+The leads for these [#SmartCustody](https://www.SmartCustody.com) efforts are Christopher Allen ([@ChristopherA](https://twitter.com/ChristopherA)), Shannon Appelcline ([@Appelcline](https://twitter.com/Appelcline)), and Bryan Bishop ([@Kanzure](https://twitter.com/kanzure)). For more information see [Author Bios](#author-bios) at end of this white paper. Those named do not endorse this version, which is a heavy edit by Jim Harper ([@jim_harper](https://twitter.com/jim_harper)) meant to conform the work to common terminology and make the material more accessible to lay readers.
 
 The procedures and contents of this white paper have been comprehensively peer-reviewed by a number of experts in the digital-asset ecosystem, including contributors to open-source project like Bitcoin Core and [The Glacier Project](https://glacierprotocol.org/), employees of blockchain technology companies like Blockstream, Ledger, and Tokensoft, and attorneys from a variety of disciplines. We expect to iterate these procedures and update this document regularly as new digital asset technologies and best practices become mature.
 
 ## INTRODUCTION
 
-Digital assets are only as safe as the procedures of their custodian. Many digital-asset holders don't practice minimal safety, and this could result in the loss of all of their Bitcoins, Ether, other digital currencies as well as non-fungible digital assets. The following procedures detail simple and practical setups that can be used as the foundation of safer digital-asset management. The base scenario requires just a few hours setup and then a semi-annual check to make sure everything remains secure.
+Digital assets are only as safe as the procedures of their custodian. Many digital-asset holders practice minimal safety, which could result in the loss of all of their Bitcoins, Ether, and other digital currencies as well as non-fungible digital assets. In the material below, a brief primer on risk management is followed by a survey of threats to digital assets that seem particularly salient for most digital asset-holders. The procedures that follow detail simple and practical setups that can be used as the foundation of safer digital-asset management. The base scenario requires just a few hours setup, followed by a semi-annual check to make sure everything remains secure.
+
+### Risk Management
+
+Risk management is a framework for securing assets or processes. It involves a series of methodical assessments. A formal risk management effort will generally begin with an examination of the thing or process being protected. This is often called “asset characterization.” In this case, the goal is fairly simple: ensuring that private keys and thus digital assets are always available to custodians, sometimes available to heirs, and never available to unauthorized parties.
+
+The next step in risk management is to identify and assess risks, often called “risk characterization” or “risk assessment.” The vocabulary of risk assessment is not settled, but there are a few key concepts that go into it:
+
+* **Vulnerability** is weakness or exposure that could prevent an objective from being reached. Vulnerabilities are common, and having a vulnerability does not damn an enterprise. The importance of vulnerabilities depend on other factors.
+
+* **Threat** is some kind of actor or entity that might prevent an objective from being reached. When the threat is a conscious actor, it is often called an "adversary" or "attacker," and it is often useful to assess such actors' motives. When the threat is some environmental or physical force, it is often called a “hazard.” As with vulnerability, the existence of a threat is not significant in and of itself. A threat’s importance and contribution to risk turns on other factors.
+
+* **Likelihood** is the chance that a vulnerability left open to a threat will materialize as an unwanted event or development that frustrates the objective of controlling digital assets. Knowing the likelihood that a threat will materialize is part of what allows risk managers to apportion their responses.
+
+* **Consequence** is the significance of loss or impediment to objectives should the threat materialize. Consequences can range from very low to very high. As with likelihood, gauging consequence allows risk managers to focus on the most significant risks.
+
+Analyzing vulnerabilities and threats permits risk managers to make rough calculations about likelihood and consequence. This process will float the most significant risks to the surface. Though these factors are often difficult to measure, a simple formula guides risk assessment: _Likelihood x Consequence = Risk_.
+
+Events with a high likelihood and consequence should be addressed first, and with the most investment of time and energy. Those are the highest risks.
+
+After risk assessment, the next step in risk management is choosing responses.
+
+Though the concepts and terminology are not settled in this area either, there are four general ways to respond to risk:
+
+* **Acceptance** – Acceptance of a threat is a rational alternative that is often chosen when the threat has low probability, low consequence, or both.
+
+* **Prevention** – Prevention is the alteration of the asset or its circumstances to diminish the likelihood of a threat materializing or to prevent it from materializing altogether.
+
+* **Interdiction** – Interdiction is any confrontation with, or influence exerted on, a threat to eliminate or limit its movement toward causing harm.
+
+* **Mitigation** – Mitigation is preparation so that, in the event of the bad thing happening, its consequences are reduced. Insurance is a quintessential mitigation technique, which softens the blow of loss.
+
+The analytical lens to use when choosing responses is benefit-cost analysis, or trade-offs. The goal is to allay risks in cost-effective ways, spending the least amount of money, and incurring the least costs overall, per unit of benefit.
+
+An important cost of some responses is “risk transfer.” That’s the shifting of risks from one target to another, the creation of new risks, or increasing the likelihood or consequence of a different risk than the one being addressed. [Process Fatigue] is an example featured in this document, where lacking attention to many very finely detailed procedures may introduce careless errors. 
+
+### Threats to Digital Assets
+
+When protecting digital assets, a custodian should address the risks that arise from the most likely and most consequential threats.
+
+Below is a brief summary of the fifteen threats (from a list of twenty-seven), a subset of which this particular scenario addresses. Additional categories of "Non-Theft Crimes"; "Loss by Government"; and "Privacy-Related" threats are not directly considered in the procedures that follow.
+
+For a complete list of digital-asset threats, along with motivations, abstract & historical case studies, risks, and potential process solutions for each, see [Threats — Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_.
+
+##### Death / Incapacitation
+
+_A mortal loss or disability that could deny funds to digital asset holders and heirs._ “I am your last firing neurons, and I seek to drag everything you ever knew down with you, into the darkness.”
+
+##### Denial of Access
+
+_Physical denial that prevents use of funds._ “I want to control your movements, to keep you from getting to your bank or to your house. As is often the case, I have a deeper motivation, but it probably has nothing to do with your cryptocurrency. Instead, my motives likely relate to an instability in your city, state, or country. I might be a riot, a political insurgency, or a popular uprising.”
+
+##### Disaster
+
+_A sudden, large-scale destructive event._ “I want to destroy. I want to crumble and burn. I want to ruin with water, to blow things into the air. I am bombs, bullets, and explosions. I am sudden and unexpected but disastrous destruction.”
+
+##### Bitrot
+
+_A hardware, software, or media failure leading to loss._ “I am entropy writ large. I want to break down your storage, crash your hard drives and degrade your optical media. I want to prevent your computers from booting, your programs from running, and your data from reading; in the end, I always win.”
+
+##### Institutional Theft
+
+_A theft by a trusted institution or its employee._ “I pretend to be a good employee, but I’m always waiting for my chance for a great score. I want to sift through the goods entrusted to my company and to take the best for myself. However, I don’t want to be caught, so I need to be cautious in my larceny.”
+
+##### Internal Theft
+
+_A theft by a trusted person such as an heir or executor._ “You trusted me with your private keys. I intend to violate that trust because I want to steal your funds for my own use. And, I’ll do my best to cover it up.”
+
+##### Network Attack, Personal
+
+_A personal online attack._ “I want to control your movements, to keep you from getting to your bank or to your house. As is often the case, I have a deeper motivation, but it probably has nothing to do with your cryptocurrency. Instead, my motives likely relate to an instability in your city, state, or country. I might be a riot, a political insurgency, or a popular uprising.”
+
+##### Network Attack, Systemic
+
+_A server online attack._ “I’m a big kahuna among hackers. I don’t go after your little bitcoin wallets, I go after the exchanges or other bitcoin sites instead. Nonetheless, you might just find yourself at a literal loss when I bankrupt the company holding your wallet.”
+
+##### Physical Theft, Casual
+
+_An opportunistic physical theft._ “I just want an easy score, and your house looks like it. Obviously, I’m taking your jewelry and your electronics. But, if you've got a safe, I’ll try to take that too.”
+
+##### Physical Theft, Sophisticated
+
+_A purposeful physical theft of private keys._ “I know you have cryptocurrency and I want to steal your keys. I’m not a fancy hacker or email spoofer. Instead, I’m someone who can successfully stage a real-world crime. I’ll break into your house or your safety deposit box. Cue the music for my heist scene.”
+
+#### Supply-Chain Attack
+
+_A logistical theft._ “I’m the slyest of thieves because I worm my way into your life without your even knowing. I corrupt your hardware before it gets to you. My goal is to mess with your devices so that I can mess with your digital assets, and you may never figure out how I did it!”
+
+##### Key Fragility
+
+_An accidental key loss._ “I am entropy writ small. All I need to do is mislay a digit or two from a ridiculously large number, and my job is done. Perhaps you could make my job easier by encoding or obscuring your key or by maintaining just a single copy; complexity and singularity both beget fragility in different ways..”
+
+##### Process Fatigue
+
+_Errors caused by the complexity of the overall procedure._ “I am laziness and exhaustion. I want to encourage you to skip the most time-consuming steps of a procedure, because they’re too much trouble. I want to introduce small errors as you go, because you’re tired of this repetitive yet mindful task. I want to turn your procedure against itself, so that the very process intended to protect your funds causes you to lose them.”
+
+##### Transaction Error
+
+_Incorrect transaction details leading to loss._  “I am the slightest error in a transaction. I’m the script that can’t complete, the address that goes to the wrong place, or even the fee that wasn’t big enough. I want your transaction to do something that you don’t expect. I am startling results that are ultimately detrimental to you.”
+
+##### User Error
+
+_An operator mistake leading to loss._ “I’m that niggling mistake that wouldn’t be a major problem in most financial situations. I want you to make a typo or to use the wrong address, so that you don’t get your money or send it to the wrong place. I want you to lose your keys, so that you can’t recover your funds. I am all the anxieties you have about Bitcoin made real.”
 
 ### About The Base Scenario
 
-The base scenario presumes the following audience:
+The base scenario presumes the following:
 
 * A holder with a significant amount of digital assets (>5% of net worth);
     * with full and legal custody of the assets and no fiduciary responsibility to others;
     * and 100% of those assets shared with a spouse, if present, in estate planning.
-* A holder who largely holds investments long term, and is not actively trading them.
+* A holder who largely holds investments long-term, and is not actively trading them.
 * A holder who lives in the first world, and thus is less concerned about issues like government attack, kidnapping, or privacy violations.
 * A holder who has sufficient computer skills to comfortably install and run apps.
 
-This scenario suggests that a comprehensive cold-storage procedure would be the best practice to maintain and protect this holder's digital assets. Though simple, this scenario is also a foundation for more complex custodial procedures. It introduces many of the basic approaches for managing digital assets, explains their importance, and presents the adversaries that could steal or ruin the holder's digital assets.
+This scenario suggests that a comprehensive cold-storage procedure would be the best practice to maintain and protect this holder's digital assets. Cold storage is the maintenance of digital assets in a protected, offline environment. Though simple, this scenario is also a foundation for more complex custodial procedures. It introduces many of the basic approaches for managing digital assets, explains their importance, and presents the threats that could steal or ruin the holder's digital assets.
 
-This scenario advocates the basic procedure to address nine major types of adversaries, while the optional procedures can help protect against five further adversaries. Additional categories of "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" adversaries are not strongly considered in this scenario. See [Appendix III: A Brief Overview of Digital-Asset Adversaries](#appendix-iii-a-brief-overview-of-digital-asset-adversaries).
+This scenario advocates the basic procedure to address nine major types of threats, while the optional procedures can help protect against five further threats. Additional categories of threat---"Non-Theft Crimes", "Loss by Government" and "Privacy-Related"---are not strongly considered in this scenario.
 
 For simplicity, this document focuses on Bitcoin, but is easily adaptable to other digital assets supported by our suggested hardware wallet.
 
-If you don't meet the description of the holder for this scenario, it will still be useful, but you will have to adapt it for you specific needs. If you are unsure as to whether you should use a cold-storage scenario, please see [Appendix I: Why Cold Storage?](#appendix-i-why-cold-storage).
+If you don't meet the description of the holder for this scenario, it will still be useful, but you will have to adapt it for your specific needs. If you are unsure as to whether you should use a cold-storage scenario, please see [Appendix I: Why Cold Storage?](#appendix-i-why-cold-storage).
 
 ## PROCEDURES
 
-The following procedure will help ensure the safety of a simple self-custody cold-storage scenario for managing digital assets. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted and when you will not be distracted. You don't want to make mistakes, and to avoid that it's best to do everything in one go.
+The following procedures implement a simple self-custody, cold-storage scenario for managing digital assets. The objective is to prevent the private keys that control digital assets from falling into the wrong hands, making sure at the same time that they are available to digital-asset owners and, when appropriate, their heirs. It is important that you initiate it when you have a large block of time: usually at least two hours when you will not be interrupted or distracted. You don't want to make mistakes, and to avoid mistakes it's best to do everything in one go.
 
 ### Be Careful!
 
-**_General rule: Don't rush and don't take cold storage lightly!_**
+**_General rule: Don't rush, and don't take cold storage lightly!_**
 
 If you make a mistake you could lose your bitcoin today, or you could expose secret data that would allow an attacker to steal your funds months or years into the future.
 
 Here are some of the more tedious steps, and why they're important:
 
-* **_Verify Your Recovery Phrase (D)._** Double-checking your recovery phrase ensures that you can rebuild access to your digital currency if you ever lose your hardware wallet(s). By doing it after a small test transaction, you're minimizing your potential loss. **_15 minutes, but tedious._**
-* **_Setup Fireproof Key Recovery Phrase (F)._** Embedding your recovery phrase in steel or titanium strongly protects you against [Disaster](#disaster), and also gives you a backup for your hardware wallet and paper recovery phrase. However, it takes a long time to stamp 96 letters. **_1 hour._** Be sure to also repeat step D for the phrase you saved in your metal-device. **_15 minutes, and still tedious._** If you choose the "Cryptosteel" alternative, that will be equally long.
+* **_Verify Your Recovery Phrase (Step D)._** Double-checking the phrase that allows you to recover private keys ensures that you can rebuild access to your digital currency if you ever lose your hardware wallet(s). By doing it after a small test transaction, you're minimizing your potential loss. **_15 minutes, but tedious._**
+* **_Setup Fireproof Key Recovery Phrase (Step F)._** Embedding your recovery phrase in steel or titanium strongly protects you against [Disaster](#disaster), and also gives you a backup for your hardware wallet and paper recovery phrase. However, it takes a long time to stamp 96 letters. **_1 hour._** Be sure to also repeat step D for the phrase you saved in your metal-device. **_15 minutes, and still tedious._** If you choose the "Cryptosteel" alternative, that will be equally long.
 
-Don't skimp on any of these phases just because they take a while; don't figure that you'll get back to them later. The goal is to ensure that you protect your digital investments from problems _before_ you make any real investments.
+Don't skimp on any of these steps just because they take a while; don't figure that you'll get back to them later. The goal is to ensure that you protect your digital investments from problems _before_ you make any real investments.
 
-### Adversaries
+### Threats
 
-This process in this basic scenario has been optimized to avoid risks from ten adversaries listed below — simplified by not addressing the risks of all possible adversaries (over 25+). In particular, these adversaries were the ones selected as most likely to impact a self-custodian in the first world. Adversaries related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario.
-
-Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#process-fatigue).
+The procedures in this basic scenario has been optimized to avoid risks from ten threats listed below — simplified by not addressing all possible threats, of which we have identified over 25. In particular, these threats were the ones selected as most likely to impact a self-custodian in the first world. Threats related to "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" are not strongly considered in this scenario. Some additional processes for this scenario are offered as options—but be careful to avoid [Process Fatigue](#process-fatigue). Careless error can be very costly.
 
 1. [Key Fragility](#key-fragility) — _an accidental key loss_
 2. [Transaction Error](#transaction-error) — _incorrect transaction details leading to loss_
 3. [User Error](#user-error) — _an operator mistake leading to loss_
-4. [System Network Attack](#network-attack-systemic) — _a server online attack_
+4. [System Network Attack](#network-attack-systemic) — _an online attack_
 5. [Death / Incapacitation](#death--incapacitation) — _a mortal loss or disability that could endanger funds_
 6. [Disaster](#disaster) — _a sudden, large-scale destructive event_
 7. [Personal Network Attack](#personal-network-attack) — _a personal online attack_
@@ -109,9 +209,9 @@ Some additional processes for this scenario are offered as options—but be care
 9. [Process Fatigue](#process-fatigue) — _errors caused by the complexity of the overall procedure_
 10. [Physical Theft, Casual](#physical-theft-casual) — _an opportunistic physical theft_
 
-The most notable of these adversaries may be "Systemic Network Attack", an adversary that is very problematic in hot-wallet scenarios, but largely nullified by removing private keys into cold storage. In many ways, it's the prime adversary overcome by this scenario.
+The most notable of these adversaries may be "Systemic Network Attack," a threat that is very problematic in hot-wallet scenarios, but largely nullified by removing private keys to cold storage. In many ways, it's the primary adversary overcome by this scenario.
 
-See [Appendix III: A Brief Overview of Digital-Asset Adversaries](#appendix-iii-a-brief-overview-of-digital-asset-adversaries) for a brief overview of the adversaries covered in this document, and [Adversaries — Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_ for a more extensive list and discussion.
+See [Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_ for a more extensive list and discussion.
 
 ### Requirements
 
@@ -149,7 +249,11 @@ This procedure will secure your Bitcoin private keys by keeping the more sensiti
 
 ### The Basic Procedure
 
-#### **A. Setup Safes**
+The following steps should allow a self-custodian to adequately secure their private keys, and thus their digital assets, in most scenarios.
+
+#### **A. Set Up Safes**
+
+Physical security of devices and papers is an essential part of digital security for a self-custodian.
 
 1. ❑ Install Home Safe[^5]
 
@@ -161,8 +265,8 @@ This procedure will secure your Bitcoin private keys by keeping the more sensiti
         2. Have sufficient funds in the joint bank account for several years of bank fees and box fees.
         3. Have the safety deposit box be in both person's names.[^7]
 
-#### **B. Setup Computer** [^8]
-1. *This optional action is omitted in this basic procedure. Enable it with "Use a USB Drive" if you are concerned about [Bitrot](#bitrot) or [Personal Network Attack](#personal-network-attack).*
+#### **B. Set Up Computer** [^8]
+1. *This optional action is omitted in this basic procedure. Perform the "Use a USB Drive" step if you are concerned about [Bitrot](#bitrot), i.e., failuer of electronic storage media, or [Personal Network Attack](#personal-network-attack), in which someone focused on disrupting your life may do so by accessing your private keys and thus your digital assets.*
 2. _This optional action is omitted in this basic procedure._
 3. _This optional action is omitted in this basic procedure._
 4. ❑ Install Ledger Live for Mac, Windows or Linux https://support.ledger.com/hc/en-us/articles/360006395553
@@ -256,7 +360,7 @@ This procedure will secure your Bitcoin private keys by keeping the more sensiti
     5. Write down, copy, or scan the Bitcoin address
     6. If you write it by hand, double check the address: read it aloud as you look at both the original and your copy.
 2. ❑ Send yourself a small Bitcoin transaction to that address. Wait for confirmation.
-    1. If you instead request a transaction from someone, best practice is to send them the address via two secure communications methods that are out of band with each other (or else: show them a QR code in person).
+    1. If you instead request a transaction from someone, the best practice is to send them the address via two secure communications methods that are out of band with each other (or: show them a QR code in person).
     2. After sufficient time has elapsed, you should see the transaction in your Bitcoin account on Ledger Live
 3. ❑ OPTIONAL: Use the "Send" menu item in Ledger Live to send some (but not all) of your test funds back to a different Bitcoin wallet. This confirms that your wallet can not only receive bitcoins, but spend them too[^14]. Again, wait for confirmation.
 4. ❑ Export account info from Ledger Wallet Bitcoin
@@ -780,90 +884,6 @@ There may be some other 24-word keys or passwords at [storage location]. These m
 *[Discussion of non-digital assets or important accounts, such as brokerage and email accounts, may also be appropriate for such a letter.]*
 
 Signed, [Digital Asset Holder]
-
-### Appendix III: A Brief Overview of Digital-Asset Adversaries
-
-When creating a scenario for protecting digital assets, a custodian makes choices in his procedures to address vulnerabilities to a specific set of adversaries.
-
-Our term “adversary” is slightly different from the more common term “risk” used by other security analysis models. By anthropomorphizing these threats, we can consider their motivations. This helps a custodian to gain some distance from the scenario by making it less personal; this makes it easier for him to determine which adversaries actually are of greater risk to him personally.
-
-Following is a brief summary of the fifteen adversaries (from a list of twenty-seven) that this particular scenario addresses. Additional categories of "Non-Theft Crimes", "Loss by Government" and "Privacy-Related" adversaries are not strongly considered in the procedures offered by this scenario.
-
-For a complete list of digital-asset adversaries, along with motivations, abstract & historical case studies, risks, and potential process solutions for each, see [Adversaries — Case Studies for Securing Digital Assets Against Loss]() _(available late Spring 2019)_.
-
-#### CATEGORY: Loss by Acts of God
-
-_A loss that wasn’t caused by any intelligent attacker._
-
-##### Death / Incapacitation
-
-_A mortal loss or disability that could endanger funds._ “I am your last firing neurons, and I seek to drag everything you ever knew down with you, into the darkness.”
-
-##### Denial of Access
-
-_Physical denial that prevents use of funds._ “I want to control your movements, to keep you from getting to your bank or to your house. As is often the case, I have a deeper motivation, but it probably has nothing to do with your cryptocurrency. Instead, my motives likely relate to an instability in your city, state, or country. I might be a riot, a political insurgency, or a popular uprising.”
-
-##### Disaster
-
-_A sudden, large-scale destructive event._ “I want to destroy. I want to crumble and burn. I want to ruin with water, to blow things into the air. I am bombs, bullets, and explosions. I am sudden and unexpected but disastrous destruction.”
-
-#### CATEGORY: Loss by Computer Error
-
-_A loss caused by computer hardware or software._
-
-##### Bitrot
-
-_A hardware, software, or media failure leading to loss._ “I am entropy writ large. I want to break down your storage, crash your hard drives and degrade your optical media. I want to prevent your computers from booting, your programs from running, and your data from reading; in the end, I always win.”
-
-#### CATEGORY: Loss by Crime, Theft
-
-A loss caused by a criminal taking your keys (and thus funds) from you.
-
-##### Institutional Theft
-
-_A theft by a trusted institution or its employee._ “I pretend to be a good employee, but I’m always waiting for my chance for a great score. I want to sift through the goods entrusted to my company and to take the best for myself. However, I don’t want to be caught, so I need to be cautious in my larceny.”
-
-##### Internal Theft
-
-_A theft by a trusted person such as an heir or executor._ “You trusted me with your private keys. I intend to violate that trust because I want to steal your funds for my own use. And, I’ll do my best to cover it up.”
-
-##### Network Attack, Personal
-
-A personal online attack._ “I want to control your movements, to keep you from getting to your bank or to your house. As is often the case, I have a deeper motivation, but it probably has nothing to do with your cryptocurrency. Instead, my motives likely relate to an instability in your city, state, or country. I might be a riot, a political insurgency, or a popular uprising.”
-
-##### Network Attack, Systemic
-
-_A server online attack._ “I’m a big kahuna among hackers. I don’t go after your little bitcoin wallets, I go after the exchanges or other bitcoin sites instead. Nonetheless, you might just find yourself at a literal loss when I bankrupt the company holding your wallet.”
-
-##### Physical Theft, Casual
-
-_An opportunistic physical theft_ “I just want an easy score, and your house looks like it. Obviously, I’m taking your jewelry and your electronics. But, if you got a safe, I’ll try to take that too. I have no idea what I’ll do with it, or with the contents if I can get it open. If I see some weird numbers, I’ll probably just trash them.”
-
-##### Physical Theft, Sophisticated
-
-_A purposeful physical theft of private keys._ “I know you have cryptocurrency and I want to steal your keys. I’m not a fancy hacker or email spoofer. Instead, I’m someone who can successfully stage a real-world crime. I’ll break into your house or your safety deposit box. Cut the music for my heist scene.”
-
-#### Supply-Chain Attack
-
-_A logistical theft._ “I’m the slyest of thieves because I worm my way into your life without your even knowing. I corrupt your hardware before it gets to you. My goal is to mess with your devices so that I can mess with your digital assets, and you may never figure out how I did it!”
-
-#### CATEGORY: Loss by Mistakes
-
-##### Key Fragility
-
-_An accidental key loss._ “I am entropy writ small. All I need to do is mislay a digit or two from a ridiculously large number, and my job is done. Perhaps you could make my job easier by encoding or obscuring your key or by maintaining just a single copy; complexity and singularity both beget fragility in different ways..”
-
-##### Process Fatigue
-
-_Errors caused by the complexity of the overall procedure._ “I am laziness and exhaustion. I want to encourage you to skip the most time-consuming steps of a procedure, because they’re too much trouble. I want to introduce small errors as you go, because you’re tired of this repetitive yet mindful task. I want to turn your procedure against itself, so that the very process intended to protect your funds causes you to lose them.”
-
-##### Transaction Error
-
-_Incorrect transaction details leading to loss._  “I am the slightest error in a transaction. I’m the script that can’t complete, the address that goes to the wrong place, or even the fee that wasn’t big enough. I want your transaction to do something that you don’t expect. I am startling results that are ultimately detrimental to you.”
-
-##### User Error
-
-_An operator mistake leading to loss._ “I’m that niggling mistake that wouldn’t be a major problem in most financial situations. I want you to make a typo or to use the wrong address, so that you don’t get your money or send it to the wrong place. I want you to lose your keys, so that you can’t recover your funds. I am all the anxieties you have about Bitcoin made real.”
 
 ## AUTHOR BIOS
 
